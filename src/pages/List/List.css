@@ -1,25 +1,165 @@
-.list-table-format{
-    display: grid;
-    grid-template-columns: 0.5fr 2fr 1fr 1fr 0.5fr;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    border: 1px solid #cacaca;
-    font-size: 13px;
+/* List.css – Green-Theme (Compact + No Glow) */
+.list-container {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1rem 1.25rem;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
 }
-.list-table-format.title{
-    background-color: #f9f9f9;
-}
-.list-table-format img{
-    width: 50px;
-}
-@media(max-width:600px){
 
-    .list-table-format{
-        grid-template-columns: 1fr 3fr 1fr;
-        gap: 15px;
-    }
-    .list-table-format.title{
-        display: none;
-    }
+/* Header – Green Gradient */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.list-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.list-count {
+  font-size: 0.9rem;
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.15);
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* Table */
+.list-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.list-table-format {
+  display: grid;
+  grid-template-columns: 0.7fr 2.3fr 1fr 0.9fr 0.5fr;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+}
+
+/* Title Row */
+.list-table-format.title {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 1rem;
+  border-bottom: none;
+  box-shadow: none; /* Removed glow */
+}
+
+.list-table-format.title strong {
+  color: white;
+}
+
+/* Image */
+.list-image-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1.5px solid #a8e6b9;
+  box-shadow: none; /* Removed glow */
+}
+
+.list-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.list-table-format:hover .list-image {
+  transform: scale(1.08);
+}
+
+/* Text */
+.list-name {
+  font-weight: 600;
+  color: #1e7e34;
+}
+
+.list-category {
+  color: #2d6a4f;
+  font-weight: 500;
+}
+
+.list-price {
+  font-weight: 700;
+  color: #28a745;
+  font-size: 1rem;
+}
+
+/* Remove Button – No Glow */
+.list-remove-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: none; /* ❌ No glow */
+}
+
+.list-remove-btn:hover {
+  background: #ff4d4d;
+  transform: scale(1.1);
+}
+
+.list-remove-btn:active {
+  transform: scale(0.95);
+}
+
+/* Empty State */
+.list-empty {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #718096;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .list-container { margin: 1rem; padding: 1rem; border-radius: 10px; }
+  .list-header { flex-direction: column; text-align: center; gap: 0.5rem; }
+  .list-header h2 { font-size: 1.35rem; }
+  .list-table-format { grid-template-columns: 70px 1fr 1fr 40px; gap: 0.5rem; padding: 0.7rem; font-size: 0.9rem; }
+  .list-table-format.title { display: none; }
+  .list-image-wrapper { width: 45px; height: 45px; }
+  .list-remove-btn { width: 28px; height: 28px; font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  .list-table-format { grid-template-columns: 55px 1fr 35px; gap: 0.4rem; }
+  .list-price, .list-category { display: none; }
 }

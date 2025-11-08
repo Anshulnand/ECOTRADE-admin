@@ -1,0 +1,100 @@
+.broadcast-container {
+  display: flex;
+  height: 85vh;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  background: #f7fdf8;
+}
+
+/* Left seller list */
+.seller-list {
+  width: 25%;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.seller-item {
+  padding: 12px;
+  margin: 5px 0;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.seller-item:hover,
+.seller-item.active {
+  background: #fff;
+  color: #28a745;
+}
+
+/* Message panel */
+.message-panel {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.message-area {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f8fdf8;
+}
+
+.message-bubble {
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.message-bubble.admin {
+  background: #d1f7d1;
+  align-self: flex-end;
+}
+
+.message-bubble.seller {
+  background: #e9ecef;
+}
+
+.message-input {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.message-input button {
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.message-input button:hover {
+  background: linear-gradient(135deg, #1e7e34, #138f70);
+}
+
+.no-seller {
+  margin: auto;
+  font-size: 1.2rem;
+  color: #555;
+}

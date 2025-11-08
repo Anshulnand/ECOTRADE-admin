@@ -29,3 +29,15 @@ hr{
 .cursor{
   cursor: pointer;
 }
+
+.app {
+  min-height: 100vh; /* Full screen height */
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden; /* prevent extra scroll caused by children */
+}
