@@ -212,7 +212,8 @@
   font-size: 1rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(135deg, #28a745, #20c997);
+  background:  #1f6f43;
+
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -222,7 +223,7 @@
 }
 
 .add-btn:hover {
-  background: linear-gradient(135deg, #218838, #1da88a);
+  background:  #1f6f43;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
 }

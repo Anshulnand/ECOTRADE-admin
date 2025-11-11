@@ -16,7 +16,7 @@ const Add = () => {
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     setImage(file);
-    event.target.value = ''; // Reset input to allow uploading same file again
+    event.target.value = ''; 
   };
 
   const handleInputChange = (event) => {
@@ -160,7 +160,10 @@ const Add = () => {
             >
               <option value="Rice">Rice</option>
               <option value="Pulses">Pulses</option>
-              <option value="Poha">Poha</option>
+              <option value="Poha">vegetable</option>
+               <option value="Poha">flour</option>
+                <option value="Poha">spices</option>
+                 
             </select>
           </div>
 

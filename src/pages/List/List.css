@@ -1,3 +1,14 @@
+:root{
+  --bg-start: #eafbea;
+  --bg-end: #d6f5d6;
+  --sidebar-start: #2e8b57;
+  --sidebar-end: #1f6f43;
+  --accent: #1f6f43;
+  --accent-2: #2e8b57;
+  --card-border: #dce9df;
+  --scroll-thumb: #a4d8a0;
+}
+
 /* List.css – Green-Theme (Compact + No Glow) */
 .list-container {
   max-width: 900px;
@@ -24,7 +35,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
-  background: linear-gradient(135deg, #28a745, #20c997);
+  background: var(--accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -61,7 +72,7 @@
 
 /* Title Row */
 .list-table-format.title {
-  background: linear-gradient(135deg, #28a745, #20c997);
+  background: var(--accent);
   color: white;
   font-weight: 600;
   font-size: 1rem;

@@ -1,38 +1,58 @@
-import React from 'react'
-import './Sidebar.css'
-import { assets } from '../../assets/assets'
-import { NavLink } from 'react-router-dom'
-import { FaBullhorn } from 'react-icons/fa' // 📢 Broadcast icon
+import React, { useState } from 'react';
+import './Sidebar.css';
+import { assets } from '../../assets/assets';
+import { NavLink } from 'react-router-dom';
+import { FaBullhorn, FaBars, FaTimes } from 'react-icons/fa';
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => setIsOpen(!isOpen);
+
   return (
-    <div className='sidebar'>
-      <h2 className="sidebar-title">Dashboard</h2>
+    <>
+      {/* Mobile Hamburger Button */}
+      <button className="sidebar-toggle" onClick={toggleSidebar}>
+        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
 
-      <div className="sidebar-options">
-        <NavLink to='/add' className="sidebar-option">
-          <img src={assets.add_icon} alt="" />
-          <p>Add Items</p>
-        </NavLink>
+      {/* Sidebar */}
+      <div className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
+        <div className="sidebar-header">
+          <h2 className="sidebar-title">Dashboard</h2>
+          {/* Close button inside on mobile */}
+          <button className="sidebar-close" onClick={toggleSidebar}>
+            <FaTimes size={20} />
+          </button>
+        </div>
 
-        <NavLink to='/list' className="sidebar-option">
-          <img src={assets.order_icon} alt="" />
-          <p>List Items</p>
-        </NavLink>
+        <div className="sidebar-options">
+          <NavLink to="/add" className="sidebar-option" onClick={() => setIsOpen(false)}>
+            <img src={assets.add_icon} alt="Add" />
+            <p>Add Items</p>
+          </NavLink>
 
-        <NavLink to='/orders' className="sidebar-option">
-          <img src={assets.order_icon} alt="" />
-          <p>Orders</p>
-        </NavLink>
+          <NavLink to="/list" className="sidebar-option" onClick={() => setIsOpen(false)}>
+            <img src={assets.order_icon} alt="List" />
+            <p>List Items</p>
+          </NavLink>
 
-        {/* 📢 New Broadcast Option */}
-        <NavLink to='/broadcast' className="sidebar-option">
-          <FaBullhorn size={22} style={{ color: "#28a745" }} />
-          <p>Broadcast</p>
-        </NavLink>
+          <NavLink to="/orders" className="sidebar-option" onClick={() => setIsOpen(false)}>
+            <img src={assets.order_icon} alt="Orders" />
+            <p>Orders</p>
+          </NavLink>
+
+          <NavLink to="/broadcast" className="sidebar-option" onClick={() => setIsOpen(false)}>
+            <FaBullhorn size={22} style={{ color: '#414141ff' }} />
+            <p>Broadcast</p>
+          </NavLink>
+        </div>
       </div>
-    </div>
-  )
-}
 
-export default Sidebar
+      {/* Overlay for mobile */}
+      {isOpen && <div className="sidebar-overlay" onClick={toggleSidebar}></div>}
+    </>
+  );
+};
+
+export default Sidebar;
